@@ -13,7 +13,6 @@ By automating the deployment process, developers can focus more on coding and le
 ![Blank diagram](https://github.com/user-attachments/assets/440b9dbf-6752-42a1-9d30-783fbe008200)
 
 
-
 ## Use Case Scenario: Deploying a Web Application with a CI/CD Pipeline to AWS ECS
 
 **Company Background:**
@@ -44,14 +43,22 @@ Step 6. Create Task Definition
 
 Step 7. Create ECS Service with Application Load Balancer
 
-Step 8 Update Application Load Balancer Security Group
+Step 8. Update Application Load Balancer Security Group
+
+Step 9. Create CodeCommit Reop
+
+Step 10. Push code to CodeCommit Repo
+
+Step 11. Create CodeBuild Project
+
+Step 12. Create CodePipeline CI/CD
+
+Step 13. CI/CD Pipeline to AWS ECS DEMO
 
 
 ## 📝 Prerequisites
 
 Before you begin, ensure the following prerequisites are met:
-
-
 
 * Ensure you have completed the Amazon ECR setup steps. For more information, see [Setting up for Amazon ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/get-set-up-for-amazon-ecr.html) in the Amazon Elastic Container Registry User Guide.
 
@@ -61,8 +68,25 @@ Before you begin, ensure the following prerequisites are met:
 
 * You have the AWS CLI installed and configured. For more information, see [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) in the AWS Command Line Interface User Guide.
 
+## Installation
 
+Run the following commands to install nodejs app and create a dockerimage:
 
+* Git clone
+
+```bash
+git clone https://github.com/saasscaleup/nodejs-ssl-server.git
+```
+
+* Build and run docker container
+
+```bash
+docker build -t nodejs-server-demo .
+```
+
+```bash
+docker run -dp 3000:3000 nodejs-server-demo
+```
 ## ➡️ Step 1 - Create WebApp Docker Image
 
 Amazon ECS uses Docker images in task definitions to launch containers. Docker is a technology that provides the tools for you to build, run, test, and deploy distributed applications in containers. 
@@ -75,23 +99,7 @@ To create a Docker image of a simple web application:
 touch Dockerfile
 ```
 
-2. Edit the Dockerfile you just created and add the following content.
 
-```bash
-FROM node:alpine
-
-WORKDIR /nodejs-docker-aws-ecs
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD [ "node", "app.js" ]
-```
 
 
 
