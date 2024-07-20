@@ -3,17 +3,27 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Deploying Docker containers to Amazon Elastic Container Service (ECS) automatically with a CI/CD pipeline streamlines the process of managing and scaling applications in the cloud. This approach leverages the power of continuous integration and continuous deployment to ensure that updates and new features are seamlessly integrated and deployed with minimal manual intervention. By automating the deployment process, developers can focus more on coding and less on operational tasks, improving efficiency and reducing the risk of errors. Utilizing tools like AWS CodePipeline, CodeBuild, and CodeDeploy, alongside Docker and ECS, creates a robust and scalable infrastructure that supports rapid development and reliable application delivery.
+Deploying Docker containers to Amazon Elastic Container Service (ECS) automatically with a CI/CD pipeline streamlines the process of managing and scaling applications in the cloud. This approach leverages the power of continuous integration and continuous deployment to ensure that updates and new features are seamlessly integrated and deployed with minimal manual intervention.
+
+By automating the deployment process, developers can focus more on coding and less on operational tasks, improving efficiency and reducing the risk of errors. Utilizing tools like AWS CodePipeline, CodeBuild, and CodeDeploy, alongside Docker and ECS, creates a robust and scalable infrastructure that supports rapid development and reliable application delivery.
 
 
 ## <a name="design">📐 Architecture Diagram</a>
 
-![Docker Image-2](https://github.com/julien-muke/nodejs-docker-aws-ecs/assets/110755734/121e371a-3b6f-4a7c-a20d-34a05b2af90a)
+![Blank diagram](https://github.com/user-attachments/assets/440b9dbf-6752-42a1-9d30-783fbe008200)
 
 
-## Use Case: Deploying Web Application on Amazon ECS.
 
-Imagine you are developing a basic web application, and you want to deploy it using Amazon ECS. Example: Imagine a simple Node.j  application that displays "Hello, World!" on a webpage. The Dockerfile could specify the Node.js base image and install any required dependencies. You'd then build and push the image to ECR. Finally, by creating an ECS service with your task definition, you'd deploy the application on Fargate, making it accessible on the internet.
+## Use Case Scenario: Deploying a Web Application with a CI/CD Pipeline to AWS ECS
+
+**Company Background:**
+TechSolutions Inc., a growing software company, develops a web application that serves thousands of users. The development team frequently releases updates and new features to enhance user experience and stay competitive.
+
+**Challenge:**
+The team faces difficulties in manually deploying updates to the web application. Manual deployments are time-consuming, prone to errors, and often result in inconsistent environments, leading to downtime and user dissatisfaction.
+
+**Objective:**
+Automate the deployment process to ensure seamless, error-free updates and maintain high availability of the web application.
 
 
 ## <a name="steps">☑️ Steps</a>
